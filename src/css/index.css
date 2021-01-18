@@ -1,0 +1,115 @@
+body { background: #f9f9f9; }
+
+#nav { width: 100%; height: 80px; border-bottom: 1px solid #cccccc; background-color: #fff; position: fixed; top: 0; z-index: 2; }
+
+#nav .nav { width: 1210px; height: 80px; margin: auto; display: flex; position: relative; }
+
+#nav .nav .nav_logo { width: 255px; height: 80px; display: flex; }
+
+#nav .nav .nav_logo .logo { display: flex; align-items: center; width: 146px; }
+
+#nav .nav .nav_logo .logo img { width: 146px; height: 46px; }
+
+#nav .nav .nav_logo .city { width: 68px; margin-left: 26px; padding-top: 25px; position: relative; }
+
+#nav .nav .nav_logo .city .city_nav { background: rgba(0, 0, 0, 0.05) url(../img/list_down.png) no-repeat 48px 13px; background-size: 13px; width: 68px; height: 32px; line-height: 32px; padding-left: 12px; font-size: 14px; font-weight: 500 !important; color: #262626; border-radius: 20px; }
+
+#nav .nav .nav_logo .city .city_list { position: absolute; left: -38px; top: 62px; display: none; width: 142px; height: auto; background: #fff; border-radius: 4px; box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1); text-align: center; padding: 20px 0; z-index: 2; }
+
+#nav .nav .nav_logo .city .city_list li { padding: 8px 0; }
+
+#nav .nav .nav_logo .city .city_list li:hover { color: #ba2d3f; }
+
+#nav .nav .nav_logo .city:hover .city_list { display: block; }
+
+#nav .nav .nav_list { margin-left: 60px; }
+
+#nav .nav .nav_list li { margin-right: 14px; float: left; height: 80px; }
+
+#nav .nav .nav_list li .index { color: #ba2d3f; }
+
+#nav .nav .nav_list li a { display: block; height: 80px; padding: 0 25px; text-align: center; line-height: 80px; color: #000000; }
+
+#nav .nav .nav_list li a:hover { background: #ba2d3f; color: #fff; }
+
+#nav .nav .nav_call { padding-left: 35px; background: url(../img/nav_call.png) no-repeat left center; background-size: 24px 24px; position: absolute; right: 0; top: 50%; margin-top: -12px; width: auto; height: 24px; line-height: 24px; font-size: 16px; color: #ba2d3f; padding-right: 15px; font-weight: 400 !important; }
+
+#nav .nav .btn { display: block; width: 80px; height: 40px; background-color: #58bc58; color: #fff; text-align: center; line-height: 40px; position: absolute; right: -100px; top: 18px; }
+
+#banner { width: 100%; height: 540px; position: relative; }
+
+#banner .banner { width: 1210px; height: 540px; margin: auto; margin-top: 110px; overflow: hidden; }
+
+#banner .banner > a { position: absolute; }
+
+#banner .banner > a img { width: 26px; height: 52px; }
+
+#banner .banner .arrow_left { left: 80px; top: 235px; }
+
+#banner .banner .arrow_right { transform: rotateY(180deg); right: 80px; top: 235px; }
+
+#banner .banner ul { position: relative; }
+
+#banner .banner ul li { display: list-item; position: absolute; top: 0; opacity: 0; }
+
+#banner .banner .banner_idx { position: absolute; bottom: 50px; left: 765px; cursor: pointer; z-index: 2; }
+
+#banner .banner .banner_idx span { width: 12px; height: 12px; display: inline-block; border-radius: 50%; background-color: #cccccc; margin: 0 3px; }
+
+#house_list { width: 100%; }
+
+#house_list .house_list { width: 1210px; margin: auto; }
+
+#house_list .house_list .main { width: 100%; }
+
+#house_list .house_list .main .title { padding: 30px 0; text-align: center; overflow: hidden; clear: both; line-height: 25px; }
+
+#house_list .house_list .main .title > div:nth-of-type(1) { float: left; font-size: 28px; color: #262626; font-weight: 400 !important; }
+
+#house_list .house_list .main .title > div:nth-of-type(2) { float: right; padding-right: 18px; background: url(../img/gengduo.png) no-repeat right center; background-size: 8px 15px; cursor: pointer; color: #b42536; font-size: 18px; }
+
+#house_list .house_list .main .main1, #house_list .house_list .main .main2, #house_list .house_list .main .main3 { width: 100%; }
+
+#house_list .house_list .main .main1 .house, #house_list .house_list .main .main2 .house, #house_list .house_list .main .main3 .house { float: left; width: 383px; height: 365px; background: #fafafa; margin-right: 20px; margin-bottom: 20px; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.1); box-sizing: border-box; cursor: pointer; }
+
+#house_list .house_list .main .main1 .house .house_img, #house_list .house_list .main .main2 .house .house_img, #house_list .house_list .main .main3 .house .house_img { width: 100%; height: 252px; overflow: hidden; position: relative; }
+
+#house_list .house_list .main .main1 .house .house_img img, #house_list .house_list .main .main2 .house .house_img img, #house_list .house_list .main .main3 .house .house_img img { width: 100%; height: 100%; display: block; position: absolute; left: 0; top: 0; transition: all linear 0.4s; transform-origin: center center; overflow: hidden; }
+
+#house_list .house_list .main .main1 .house .house_img:hover img, #house_list .house_list .main .main2 .house .house_img:hover img, #house_list .house_list .main .main3 .house .house_img:hover img { transform: scale(1.1); }
+
+#house_list .house_list .main .main1 .house .house_txt, #house_list .house_list .main .main2 .house .house_txt, #house_list .house_list .main .main3 .house .house_txt { width: 100%; padding: 14px; box-sizing: border-box; }
+
+#house_list .house_list .main .main1 .house .house_txt span:nth-of-type(1), #house_list .house_list .main .main2 .house .house_txt span:nth-of-type(1), #house_list .house_list .main .main3 .house .house_txt span:nth-of-type(1) { float: left; line-height: 1; width: 40px; padding: 2px 0; text-align: center; background: rgba(217, 25, 25, 0.03); border-radius: 10px; border: 1px solid rgba(217, 25, 25, 0.5); margin-right: 6px; font-size: 14px; color: #d91919; box-sizing: border-box; }
+
+#house_list .house_list .main .main1 .house .house_txt span:nth-of-type(2), #house_list .house_list .main .main2 .house .house_txt span:nth-of-type(2), #house_list .house_list .main .main3 .house .house_txt span:nth-of-type(2) { float: left; font-size: 16px; color: #020202; line-height: 22px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 400 !important; }
+
+#house_list .house_list .main .main1 .house .house_txt span:nth-of-type(3), #house_list .house_list .main .main2 .house .house_txt span:nth-of-type(3), #house_list .house_list .main .main3 .house .house_txt span:nth-of-type(3) { float: right; display: block; font-size: 14px; color: #8c8c8c; }
+
+#house_list .house_list .main .main1 .house .price, #house_list .house_list .main .main2 .house .price, #house_list .house_list .main .main3 .house .price { margin-top: 18px; padding-left: 14px; position: relative; }
+
+#house_list .house_list .main .main1 .house .price p:nth-of-type(1), #house_list .house_list .main .main2 .house .price p:nth-of-type(1), #house_list .house_list .main .main3 .house .price p:nth-of-type(1) { font-size: 16px; color: #b42536; }
+
+#house_list .house_list .main .main1 .house .price p:nth-of-type(1) span:nth-of-type(1), #house_list .house_list .main .main2 .house .price p:nth-of-type(1) span:nth-of-type(1), #house_list .house_list .main .main3 .house .price p:nth-of-type(1) span:nth-of-type(1) { margin-right: 12px; }
+
+#house_list .house_list .main .main1 .house .price P:nth-of-type(2), #house_list .house_list .main .main2 .house .price P:nth-of-type(2), #house_list .house_list .main .main3 .house .price P:nth-of-type(2) { font-size: 12px; position: absolute; top: 35px; }
+
+#house_list .house_list .main .main1 .house .price P:nth-of-type(2) span, #house_list .house_list .main .main2 .house .price P:nth-of-type(2) span, #house_list .house_list .main .main3 .house .price P:nth-of-type(2) span { display: inline-block; padding: 1px 8px; line-height: 18px; text-align: center; background: #50b8ba; border-radius: 2px; font-size: 12px; color: white; margin-right: 6px; font-weight: 400; }
+
+#house_list .house_list .main .main1 .house .price P:nth-of-type(2) span:nth-of-type(1), #house_list .house_list .main .main2 .house .price P:nth-of-type(2) span:nth-of-type(1), #house_list .house_list .main .main3 .house .price P:nth-of-type(2) span:nth-of-type(1) { background: #5773cb; }
+
+#house_list .house_list .main .main1 .house .price P:nth-of-type(2) span:nth-of-type(2), #house_list .house_list .main .main2 .house .price P:nth-of-type(2) span:nth-of-type(2), #house_list .house_list .main .main3 .house .price P:nth-of-type(2) span:nth-of-type(2) { background: #c69f6b; }
+
+#house_list .house_list .main .main1 .house .dijia, #house_list .house_list .main .main2 .house .dijia, #house_list .house_list .main .main3 .house .dijia { float: right; width: 83px; height: 34px; text-align: center; line-height: 34px; background: #b42536; border-radius: 2px; border: 0; font-size: 14px; color: white; box-sizing: border-box; margin-right: 14px; }
+
+#copyright { width: 100%; height: 183px; color: #999; background: #303030; font-size: 14px; }
+
+#copyright .copyright { width: 1210px; height: 183px; margin: auto; }
+
+#copyright .copyright .copyright_top { width: 100%; padding-bottom: 20px; padding-top: 37px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 20px; }
+
+#copyright .copyright a { color: #ccc; }
+
+#copyright .copyright a:hover { color: #b42536; }
+
+.go_top { width: 65px; height: 0px; background: url(../img/to_top.png); background-size: 100%; position: fixed; right: 49px; bottom: 294px; overflow: hidden; transition: all .8s; cursor: pointer; }

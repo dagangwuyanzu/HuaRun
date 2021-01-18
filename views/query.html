@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/nav.css">
+    <link rel="stylesheet" href="../src/css/base.css">
+    <link rel="stylesheet" href="../src/css/query.css">
+    <title>楼盘查询</title>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div id="nav">
+        <div class="nav">
+            <div class="nav_logo">
+                <div class="logo">
+                    <img src="../src/img/nav_logo.png" alt="">
+                </div>
+                <div class="city">
+                    <div class="city_nav">
+                        广州
+                    </div>
+                    <div class="city_list">
+                        <ul>
+                            <li>选择城市</li>
+                            <li>广州</li>
+                            <li>杭州</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li>
+                        <a href="../index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="" class="index">楼盘查询</a>
+                    </li>
+                    <li>
+                        <a href="">查底价</a>
+                    </li>
+                    <li>
+                        <a href="">分析师</a>
+                    </li>
+                    <li>
+                        <a href="">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_call">
+                <span>咨询热线</span>
+                <span>400-017-7020</span>
+            </div>
+            <a href="./views/login.html" class="btn">登录</a>
+        </div>
+    </div>
+
+    <!-- 搜索栏 -->
+    <div id="quety">
+        <div class="quety">
+            <input type="text" placeholder="请输入楼盘名">
+            <button>我要找房</button>
+        </div>
+    </div>
+
+
+    <div id="title">
+        <div class="title">
+            <a href="../index.html" class="a1">新房分析师</a>
+            <a href="" class="a2">
+                <img src="../src/img/list_down.png" alt="">
+            </a>
+            <a href="" class="a3">广州楼盘</a>
+        </div>
+    </div>
+
+    <div id="quetys">
+        <div class="quetys">
+            <ul>
+                <li>
+                    <div class="label">区域：</div>
+                    <div class="quety-list">
+                        <div>不限</div>
+                        <div>荔湾区</div>
+                        <div>越秀区</div>
+                        <div>海珠区</div>
+                        <div>天河区</div>
+                        <div>白云区</div>
+                        <div>黄浦区</div>
+                        <div>番禺区</div>
+                        <div>花都区</div>
+                        <div>南沙区</div>
+                        <div>从化区</div>
+                        <div>增城区</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">总价：</div>
+                    <div class="quety-list">
+                        <div>不限</div>
+                        <div>
+                            <100万</div> <div>100-120万
+                        </div>
+                        <div>120-150万</div>
+                        <div>150-200万</div>
+                        <div>200-300万</div>
+                        <div>300-500万</div>
+                        <div>>500万</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">类型：</div>
+                    <div class="quety-list">
+                        <div>不限</div>
+                        <div>住宅</div>
+                        <div>别墅</div>
+                        <div>商住</div>
+                        <div>商铺</div>
+                        <div>写字楼</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">户型：</div>
+                    <div class="quety-list">
+                        <div>不限</div>
+                        <div>一居</div>
+                        <div>二居</div>
+                        <div>三居</div>
+                        <div>四居</div>
+                        <div>五居</div>
+                        <div>六居</div>
+                        <div>七居</div>
+                        <div>八居</div>
+                        <div>九居</div>
+                        <div>十居</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">特色：</div>
+                    <div class="quety-list">
+                        <div>不限</div>
+                        <div>自然山水</div>
+                        <div>配套成熟</div>
+                        <div>养老地产</div>
+                        <div>品牌房企</div>
+                        <div>一线海景</div>
+                        <div>板楼</div>
+                        <div>刚需住宅</div>
+                        <div>幼儿园</div>
+                        <div>投资地产</div>
+                        <div>不限购</div>
+                        <div>LOFT</div>
+                        <div>小户型</div>
+                        <div>低总价</div>
+                        <div>有地铁</div>
+                        <div>改善宜居</div>
+                        <div>洋房</div>
+                        <div>紧凑实用</div>
+                        <div>有公园</div>
+                        <div>名校环绕</div>
+                        <div>位置好</div>
+                        <div>单合同</div>
+                        <div>准现房</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">其他：</div>
+                    <div class="quety-list">
+                        <div class="select-area">
+                            <div class="opt-wrap">
+                                <span></span>
+                                <div class="con">单价</div>
+                            </div>
+                            <ul class="option">
+                                <li>不限</li>
+                                <li>小于6千元/m²</li>
+                                <li>6千-1万元/m²</li>
+                                <li>1万-2万元/m²</li>
+                                <li>2万-3万元/m²</li>
+                                <li>3万-5万元/m²</li>
+                                <li>5万元/m²以上</li>
+                            </ul>
+                        </div>
+                        <div class="select-area">
+                            <div class="opt-wrap">
+                                <span></span>
+                                <div class="con">面积</div>
+                            </div>
+                            <ul class="option">
+                                <li>不限</li>
+                                <li>
+                                    <50m²</li> <li>50m²-80m²
+                                </li>
+                                <li>80m²-120m²</li>
+                                <li>120m²-140m²</li>
+                                <li>140m²-160m²</li>
+                                <li>>160m²</li>
+                            </ul>
+                        </div>
+                        <div class="select-area">
+                            <div class="opt-wrap">
+                                <span></span>
+                                <div class="con">销售情况</div>
+                            </div>
+                            <ul class="option">
+                                <li>不限</li>
+                                <li>在售</li>
+                                <li>售罄</li>
+                                <li>待售</li>
+                            </ul>
+                        </div>
+                        <div class="select-area">
+                            <div class="opt-wrap">
+                                <span></span>
+                                <div class="con">品牌开发商</div>
+                            </div>
+                            <ul class="option">
+                                <li>不限</li>
+                                <li>万科</li>
+                                <li>龙湖</li>
+                                <li>绿城</li>
+                                <li>融信</li>
+                                <li>融创</li>
+                                <li>滨江</li>
+                                <li>保利</li>
+                                <li>招商</li>
+                                <li>碧桂园</li>
+                                <li>绿地</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="querys_tag">
+                <div>已选条件：</div>
+                <div class="querys_tag_list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="house_all">
+        <div class="house_all">
+            <div class="house_title">
+                <div class="house_l">
+                    <div class="active">
+                        全部楼盘
+                    </div>
+                    <div>优惠楼盘</div>
+                </div>
+                <div class="house_r">
+                    <div style="color: rgba(186,45,63,1);">默认排序</div>
+                    <div>总价</div>
+                    <div>单价</div>
+                    <div>共找到<span style="color: rgba(186,45,63,1);margin: 0 7px;">0</span>个符合条件的楼盘</div>
+                </div>
+            </div>
+            <div class="house_list">
+                <div class="no-list">
+                    暂无搜索结果~
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/js/jquery3.5.1.js"></script>
+    <script>
+        jQuery(($) => {
+            $('.quetys').on('click', (e) => {
+                let $e = $(e.target);
+
+                // 其他下拉菜单唤醒
+                if ($e.parents().is('.select-area')) {
+                    let $option = $($e.parents('.select-area')[0].children[1]);
+                    if ($option.css('display') === 'none') {
+                        $option.show(200);
+                    } else {
+                        $option.hide(200);
+                    }
+                };
+
+                // 下拉菜单点击事件
+
+
+                // 下拉菜单点击事件
+                // if ($e.parents().is('.option')) {
+                //     e.stopPropagation();
+                //     let $e = $(e.target);
+                //     let $con = $($($e.parent()).prev()[0].children[1]);
+                //     // console.log($e);
+                //     // console.log(init_txt);
+
+                //     if ($e.is('li')) {
+                //         if ($e.text() != '不限') {
+                //             $con.text($e.text());
+                //         } else if($e.text() == '不限'){
+                //             console.log(init_txt);
+                //             $con.text(init_txt)
+                //         }
+                //     }
+                //     init();
+                //     $('.option').hide(200);
+                // }
+
+                // 点击跟换选中的条件
+                if ($e.parents().is('.quety-list') && !$e.parents().is('.select-area')) {
+                    let quety_list = $e.parent()[0];
+                    for (let i = 0; i < quety_list.children.length; i++) {
+                        if ($e[0] == quety_list.children[i]) {
+                            quety_list.children[i].classList.add('on');
+                        } else {
+                            quety_list.children[i].classList.remove('on');
+                        }
+                    }
+                    init();
+                }
+
+            });
+            $('.option').on('click', (e) => {
+                e.stopPropagation();
+                let $e = $(e.target);
+                let $con = $($($e.parent()).prev()[0].children[1]);
+                let $quety_list = $e.parents('.quety-list');
+                // console.log($e.parent()[0]);
+
+                let arr = ['单价', '面积', '销售情况', '品牌开发商'];
+
+                if ($e.is('li')) {
+                    if ($e.text() != '不限') {
+                        $con.text($e.text());
+                    } else {
+                        for (let i = 0; i < $quety_list[0].children.length; i++) {
+                            if ($e.parent()[0] == $quety_list[0].children[i].children[1]) {
+                                $con.text(arr[i])
+                            }
+                        }
+                    }
+                }
+                init();
+                $('.option').hide(200);
+            })
+            // 初始化“不限”字体变为红色
+            $('.quety-list').map((idx, item) => {
+                if (idx !== 5) {
+                    item.children[0].classList.add('on')
+                }
+            })
+            // 点击叉叉删除条件
+            $('.querys_tag_list').on('click', (e) => {
+                let $e = $(e.target)
+                if ($e.hasClass('btn_del')) {
+                    e.preventDefault();
+                    $('.quety-list').map((idx, item) => {
+                        if (!$(item.children).hasClass('select-area')) {
+                            for (let i = 0; i < item.children.length - 1; i++) {
+                                if (item.children[i].innerText == $e.prev().text()) {
+                                    item.children[i].classList.remove('on')
+                                    item.children[0].classList.add('on');
+                                }
+
+                            }
+                        } else {
+
+                            for (let i = 0; i < item.children.length; i++) {
+                                let $option = $(item.children[i]).find('.option')[0];
+                                for (let j = 0; j < $option.children.length; j++) {
+                                    if ($e.prev().text() === $option.children[j].innerHTML) {
+                                        console.log($option);
+                                    }
+
+                                }
+                                // console.log($option);
+                                // console.log(item.children[i]);
+                            }
+
+                        }
+
+                        // console.log(item);
+                    })
+                }
+                init();
+            })
+            init();
+
+            function init() {
+                let querys_tag_list = [];
+                $('.quety-list').map((idx, item) => {
+                    for (let i = 0; i < item.children.length; i++) {
+                        if (!$(item.children[i]).hasClass('select-area')) {
+                            if ($(item.children[i]).text() !== '不限') {
+                                if ($(item.children[i]).hasClass('on')) {
+                                    querys_tag_list.push(item.children[i])
+                                }
+
+                            }
+                        } else if ($(item.children[i]).hasClass('select-area')) {
+                            let arr = ['不限', '单价', '面积', '销售情况', '品牌开发商'];
+                            let idx = 0;
+                            for (let j = 0; j < arr.length; j++) {
+                                if ($(item.children[i]).find('.con')[0].innerText !== arr[j]) {
+                                    idx++;
+                                    if (idx > 4) {
+                                        querys_tag_list.push($(item.children[i]).find('.con')[0])
+                                    }
+
+                                }
+                            }
+                            // console.log($(item.children[i]).find('.con')[0]);
+
+
+                        }
+
+                    }
+                });
+                // console.log(querys_tag_list);
+                $('.querys_tag_list').html(querys_tag_list.map((item) => {
+                    // console.log(item);
+                    return `<div class="querys_tag_item"><span>${item.innerText}</span><a href="#" class="btn_del">X</a></div>`
+                }))
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,438 @@
+body {
+    background: rgba(249, 249, 249, 1)
+}
+
+#nav {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #cccccc;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    .nav {
+        width: 1210px;
+        height: 80px;
+        margin: auto;
+        display: flex;
+        position: relative;
+
+        .nav_logo {
+            width: 255px;
+            height: 80px;
+            display: flex;
+
+            .logo {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 146px;
+                    height: 46px;
+                }
+
+                width: 146px;
+            }
+
+            .city {
+                width: 68px;
+                margin-left: 26px;
+                padding-top: 25px;
+                position: relative;
+
+                .city_nav {
+                    background: rgba(0, 0, 0, 0.05) url(../img/list_down.png) no-repeat 48px 13px;
+                    background-size: 13px;
+                    width: 68px;
+                    height: 32px;
+                    line-height: 32px;
+                    padding-left: 12px;
+                    font-size: 14px;
+                    font-weight: 500 !important;
+                    color: rgba(38, 38, 38, 1);
+                    border-radius: 20px;
+                }
+
+                .city_list {
+                    position: absolute;
+                    left: -38px;
+                    top: 62px;
+                    display: none;
+                    width: 142px;
+                    height: auto;
+                    background: #fff;
+                    border-radius: 4px;
+                    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    padding: 20px 0;
+                    z-index: 2;
+                    li {
+                        padding: 8px 0;
+
+                        &:hover {
+                            color: rgba(186, 45, 63, 1)
+                        }
+                    }
+                }
+
+                &:hover .city_list {
+                    display: block;
+                }
+            }
+        }
+
+        .nav_list {
+            margin-left: 60px;
+
+            li {
+                margin-right: 14px;
+                float: left;
+                height: 80px;
+
+                .index {
+                    color: rgba(186, 45, 63, 1);
+                }
+
+                a {
+                    display: block;
+                    height: 80px;
+                    padding: 0 25px;
+                    text-align: center;
+                    line-height: 80px;
+                    color: #000000;
+
+                    &:hover {
+                        background: rgba(186, 45, 63, 1);
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+
+        .nav_call {
+            padding-left: 35px;
+            background: url(../img/nav_call.png) no-repeat left center;
+            background-size: 24px 24px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -12px;
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            color: rgba(186, 45, 63, 1);
+            padding-right: 15px;
+            font-weight: 400 !important;
+        }
+
+        .btn {
+            display: block;
+            width: 80px;
+            height: 40px;
+            background-color: #58bc58;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            right: -100px;
+            top: 18px;
+        }
+    }
+
+}
+
+
+// 轮播图
+
+#banner {
+    width: 100%;
+    height: 540px;
+    position: relative;
+
+    .banner {
+        width: 1210px;
+        height: 540px;
+        margin: auto;
+        // background-color: aqua;
+        margin-top: 110px;
+        overflow: hidden;
+
+        >a {
+            position: absolute;
+
+            img {
+                width: 26px;
+                height: 52px;
+            }
+        }
+
+        .arrow_left {
+            left: 80px;
+            top: 235px;
+        }
+
+        .arrow_right {
+            transform: rotateY(180deg);
+            right: 80px;
+            top: 235px;
+        }
+
+        ul {
+            position: relative;
+
+            li {
+                display: list-item;
+                position: absolute;
+                top: 0;
+                opacity: 0;
+            }
+        }
+
+        .banner_idx {
+            position: absolute;
+            bottom: 50px;
+            left: 765px;
+            cursor: pointer;
+            z-index: 2;
+
+            span {
+                width: 12px;
+                height: 12px;
+                display: inline-block;
+                border-radius: 50%;
+                background-color: #cccccc;
+                margin: 0 3px;
+
+            }
+        }
+    }
+}
+
+// 主体内容 房子列表
+#house_list {
+    width: 100%;
+
+    .house_list {
+        width: 1210px;
+        margin: auto;
+
+        .main {
+            width: 100%;
+
+            .title {
+                padding: 30px 0;
+                text-align: center;
+                overflow: hidden;
+                clear: both;
+                line-height: 25px;
+
+                >div:nth-of-type(1) {
+                    float: left;
+                    font-size: 28px;
+                    color: rgba(38, 38, 38, 1);
+                    font-weight: 400 !important;
+                }
+
+                >div:nth-of-type(2) {
+                    float: right;
+                    padding-right: 18px;
+                    background: url(../img/gengduo.png) no-repeat right center;
+                    background-size: 8px 15px;
+                    cursor: pointer;
+                    color: rgba(180, 37, 54, 1);
+                    font-size: 18px;
+                }
+            }
+
+            .main1,
+            .main2,
+            .main3 {
+                width: 100%;
+
+                .house {
+                    float: left;
+                    width: 383px;
+                    height: 365px;
+                    background: rgba(250, 250, 250, 1);
+                    margin-right: 20px;
+                    margin-bottom: 20px;
+                    overflow: hidden;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    .house_img {
+                        width: 100%;
+                        height: 252px;
+                        overflow: hidden;
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            transition: all linear 0.4s;
+                            transform-origin: center center;
+                            overflow: hidden;
+                        }
+
+                        &:hover img {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    .house_txt {
+                        width: 100%;
+                        padding: 14px;
+                        box-sizing: border-box;
+
+                        span:nth-of-type(1) {
+                            // display: inline-block;
+                            float: left;
+                            line-height: 1;
+                            width: 40px;
+                            padding: 2px 0;
+                            text-align: center;
+                            background: rgba(217, 25, 25, 0.03);
+                            border-radius: 10px;
+                            border: 1px solid rgba(217, 25, 25, 0.5);
+                            margin-right: 6px;
+                            font-size: 14px;
+                            color: rgba(217, 25, 25, 1);
+                            box-sizing: border-box;
+                        }
+
+                        span:nth-of-type(2) {
+                            // display: inline-block;
+                            float: left;
+                            font-size: 16px;
+                            color: rgba(2, 2, 2, 1);
+                            line-height: 22px;
+                            max-width: 150px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            font-weight: 400 !important;
+                        }
+
+                        span:nth-of-type(3) {
+                            // display: inline-block;
+                            float: right;
+                            display: block;
+                            font-size: 14px;
+                            color: rgba(140, 140, 140, 1);
+                        }
+                    }
+
+                    .price {
+                        margin-top: 18px;
+                        padding-left: 14px;
+                        position: relative;
+
+                        p:nth-of-type(1) {
+                            font-size: 16px;
+                            color: rgba(180, 37, 54, 1);
+
+                            span:nth-of-type(1) {
+                                margin-right: 12px;
+                            }
+                        }
+
+                        P:nth-of-type(2) {
+                            font-size: 12px;
+                            position: absolute;
+                            top: 35px;
+
+                            span {
+                                display: inline-block;
+                                padding: 1px 8px;
+                                line-height: 18px;
+                                text-align: center;
+                                background: rgba(80, 184, 186, 1);
+                                border-radius: 2px;
+                                font-size: 12px;
+                                color: rgba(255, 255, 255, 1);
+                                margin-right: 6px;
+                                font-weight: 400;
+                            }
+
+                            span:nth-of-type(1) {
+                                background: rgba(87, 115, 203, 1);
+                            }
+
+                            span:nth-of-type(2) {
+                                background: rgba(198, 159, 107, 1);
+                            }
+                        }
+                    }
+
+                    .dijia {
+                        float: right;
+                        width: 83px;
+                        height: 34px;
+                        text-align: center;
+                        line-height: 34px;
+                        background: rgba(180, 37, 54, 1);
+                        border-radius: 2px;
+                        border: 0;
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 1);
+                        box-sizing: border-box;
+                        margin-right: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 版权
+#copyright {
+    width: 100%;
+    height: 183px;
+    color: #999;
+    background: rgba(48, 48, 48, 1);
+    font-size: 14px;
+
+    .copyright {
+        width: 1210px;
+        height: 183px;
+        margin: auto;
+
+        .copyright_top {
+            width: 100%;
+            padding-bottom: 20px;
+            padding-top: 37px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        a{
+            color: #ccc;
+            &:hover{
+                color: rgba(180,37,54,1);
+            }
+        }
+    }
+}
+// 回到顶部
+.go_top{
+    width: 65px;
+    height: 0px;
+    background: url(../img/to_top.png);
+    background-size: 100%;
+    position: fixed;
+    right: 49px;
+    bottom: 294px;
+    // display: none;
+    overflow: hidden;
+    // opacity: 0;
+    transition: all .8s;
+    cursor: pointer;
+}

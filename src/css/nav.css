@@ -1,0 +1,35 @@
+#nav { width: 100%; height: 80px; border-bottom: 1px solid #cccccc; position: fixed;top: 0;z-index: 5;background-color: #fff;}
+
+#nav .nav { width: 1210px; height: 80px; margin: auto; display: flex; position: relative; }
+
+#nav .nav .nav_logo { width: 255px; height: 80px; display: flex; }
+
+#nav .nav .nav_logo .logo { display: flex; align-items: center; width: 146px; }
+
+#nav .nav .nav_logo .logo img { width: 146px; height: 46px; }
+
+#nav .nav .nav_logo .city { width: 68px; margin-left: 26px; padding-top: 25px; position: relative; }
+
+#nav .nav .nav_logo .city .city_nav { background: rgba(0, 0, 0, 0.05) url(../img/list_down.png) no-repeat 48px 13px; background-size: 13px; width: 68px; height: 32px; line-height: 32px; padding-left: 12px; font-size: 14px; font-weight: 500 !important; color: #262626; border-radius: 20px; }
+
+#nav .nav .nav_logo .city .city_list { position: absolute; left: -38px; top: 62px; display: none; width: 142px; height: auto; background: #fff; border-radius: 4px; box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1); text-align: center; padding: 20px 0; z-index: 2;}
+
+#nav .nav .nav_logo .city .city_list li { padding: 8px 0; }
+
+#nav .nav .nav_logo .city .city_list li:hover { color: #ba2d3f; }
+
+#nav .nav .nav_logo .city:hover .city_list { display: block; }
+
+#nav .nav .nav_list { margin-left: 60px; }
+
+#nav .nav .nav_list li { margin-right: 14px; float: left; height: 80px; }
+
+#nav .nav .nav_list li .index { color: #ba2d3f; }
+
+#nav .nav .nav_list li a { display: block; height: 80px; padding: 0 25px; text-align: center; line-height: 80px; color: #000000; }
+
+#nav .nav .nav_list li a:hover { background: #ba2d3f; color: #fff; }
+
+#nav .nav .nav_call { padding-left: 35px; background: url(../img/nav_call.png) no-repeat left center; background-size: 24px 24px; position: absolute; right: 0; top: 50%; margin-top: -12px; width: auto; height: 24px; line-height: 24px; font-size: 16px; color: #ba2d3f; padding-right: 15px; font-weight: 400 !important; }
+
+#nav .nav .btn { display: block; width: 80px; height: 40px; background-color: #58bc58; color: #fff; text-align: center; line-height: 40px; position: absolute; right: -100px; top: 18px; }

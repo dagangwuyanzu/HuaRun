@@ -1,0 +1,69 @@
+#quety { width: 100%; height: 60px; margin-bottom: 40px; }
+
+#quety .quety { width: 1200px; height: 60px; margin: auto; background: white; box-shadow: 0px 2px 12px 0px rgba(201, 201, 201, 0.5); border-radius: 4px; position: relative; margin-top: 100px; }
+
+#quety .quety input { width: 80%; padding: 20px; float: none; height: 20px; line-height: 20px; margin: 0; text-align: left; border: 0; box-sizing: content-box; }
+
+#quety .quety button { width: 122px; height: 40px; line-height: 40px; padding-left: 26px; border-radius: 4px; font-size: 16px; font-weight: 400; color: white; position: absolute; right: 16px; top: 10px; background: #ba2d3f url(../img/sosuo.png) no-repeat 15px center; background-size: 18px 18px; border: none; cursor: pointer; text-transform: none; }
+
+#title { width: 100%; }
+
+#title .title { width: 1200px; height: 20px; margin: auto; padding-bottom: 10px; margin-bottom: 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); border-radius: 2px; font-size: 12px; font-weight: 400; color: #262626; }
+
+#title .title a { display: inline-block; }
+
+#title .title .a1 { font-size: 12px; font-weight: 400; color: #262626; vertical-align: middle; }
+
+#title .title .a2 img { display: inline-block; width: 10px; height: 6px; transform: rotate(-90deg); margin-top: -2px; margin-left: 2px; margin-right: 2px; }
+
+#title .title .a3 { color: #b42536; }
+
+#quetys { width: 100%; }
+
+#quetys .quetys { width: 1200px; margin: auto; }
+
+#quetys .quetys > ul { margin: 30px 0 32px; }
+
+#quetys .quetys > ul > li { margin-top: 8px; }
+
+#quetys .quetys > ul > li .label { float: left; width: 42px; height: 20px; line-height: 20px; font-size: 14px; font-weight: 400; color: #262626; margin-right: 20px; padding: 0; }
+
+#quetys .quetys > ul > li .quety-list { width: 93%; display: inline-block; }
+
+#quetys .quetys > ul > li .quety-list > div { float: left; margin-right: 30px; margin-bottom: 6px; font-size: 14px; font-weight: 400; cursor: pointer; }
+
+#quetys .quetys > ul > li .quety-list .select-area { width: 116px; height: 24px; position: relative; }
+
+#quetys .quetys > ul > li .quety-list .select-area span { float: right; width: 11px; height: 6px; text-indent: -9999px; margin: 9px 10px 0 0; background: url(../img/list_down.png) no-repeat; background-size: 100% 100%; }
+
+#quetys .quetys > ul > li .quety-list .select-area .con { height: 24px; line-height: 22px; padding: 0 10px; font-size: 12px; color: #262626; background: #fff; border: 1px solid #e4e4e4; box-sizing: border-box; border-radius: 3px; }
+
+#quetys .quetys > ul > li .quety-list .select-area .option { display: none; position: absolute; width: 100%; padding: 6px 10px; margin: 0; background: #fff; border: 1px solid #e4e4e4; border-top: none; box-sizing: border-box; z-index: 100; }
+
+#quetys .quetys > ul > li .quety-list .select-area .option li { float: none; font-size: 12px; line-height: 26px; margin-right: 0; cursor: pointer; text-align: left; color: #262626; }
+
+#quetys .quetys .querys_tag { width: 1200px; margin: auto; overflow: hidden; padding: 12px 16px; margin-bottom: 20px; background: #F8F8F8; }
+
+#quetys .quetys .querys_tag > div { float: left; margin-right: 10px; }
+
+#quetys .quetys .querys_tag .querys_tag_list .querys_tag_item { display: inline-block; width: auto; padding: 0 26px 0 10px; height: 20px; line-height: 18px; border-radius: 2px; border: 1px solid rgba(0, 0, 0, 0.2); font-size: 14px; font-weight: 400; color: #262626; margin-right: 20px; position: relative; cursor: pointer; }
+
+#quetys .quetys .querys_tag .querys_tag_list .querys_tag_item a { position: absolute; right: 5px; }
+
+#quetys .on { color: #ba2d3f; }
+
+#house_all { width: 1200px; margin: auto; }
+
+#house_all .house_all { width: 1025px; float: left; }
+
+#house_all .house_all .house_title { width: 100%; height: 65px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+#house_all .house_all .house_title .house_l > div { float: left; padding: 20px 20px; font-size: 18px; font-weight: 400; color: #666; cursor: pointer; }
+
+#house_all .house_all .house_title .house_l .active { position: relative; float: left; padding: 20px 20px; font-size: 18px; font-weight: 400; color: #666; cursor: pointer; }
+
+#house_all .house_all .house_title .house_l .active::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: #ba2d3f; }
+
+#house_all .house_all .house_title .house_r { font-size: 14px; float: right; }
+
+#house_all .house_all .house_title .house_r > div { float: left; margin-right: 15px; }

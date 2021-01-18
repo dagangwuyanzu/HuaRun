@@ -5,22 +5,303 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/base.css">
-    
+    <link rel="stylesheet" href="./src/css/nav.css">
+    <link rel="stylesheet" href="./src/css/index.css">
     <title>华润首页</title>
 </head>
 
+<!-- <script src="src/js/index.js"></script> -->
+
 <body>
+    <!-- 导航栏 -->
     <div id="nav">
-        <div class="nav_logo">
-            哈喽
-        </div>
-        <div class="nav_list">
-
-        </div>
-        <div class="nav_call">
-
+        <div class="nav">
+            <div class="nav_logo">
+                <div class="logo">
+                    <img src="./src/img/nav_logo.png" alt="">
+                </div>
+                <div class="city">
+                    <div class="city_nav">
+                        广州
+                    </div>
+                    <div class="city_list">
+                        <ul>
+                            <li>选择城市</li>
+                            <li>广州</li>
+                            <li>杭州</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li>
+                        <a href="" class="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="./views/query.html">楼盘查询</a>
+                    </li>
+                    <li>
+                        <a href="">查底价</a>
+                    </li>
+                    <li>
+                        <a href="">分析师</a>
+                    </li>
+                    <li>
+                        <a href="">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_call">
+                <span>咨询热线</span>
+                <span>400-017-7020</span>
+            </div>
+            <a href="./views/login.html" class="btn">登录</a>
         </div>
     </div>
+
+    <!-- 轮播图 -->
+    <div id="banner">
+        <div class="banner">
+            <a href="" class="arrow_left">
+                <img src="src/img/arrow_left.png" alt="">
+            </a>
+            <ul class="bannerList">
+                <li>
+                    <a href="">
+                        <img src="src/img/banner1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="src/img/banner2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="src/img/banner3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="src/img/banner4.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="src/img/banner5.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <a href="" class="arrow_right">
+                <img src="src/img/arrow_right.png" alt="">
+            </a>
+            <div class="banner_idx">
+                <span data-id="1"></span>
+                <span data-id="2"></span>
+                <span data-id="3"></span>
+                <span data-id="4"></span>
+                <span data-id="5"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 主题内容 房子列表 -->
+    <div id="house_list">
+        <div class="house_list">
+            <div class="main">
+                <div class="title">
+                    <div>广州热门楼盘推荐</div>
+                    <div>查看更多</div>
+                </div>
+                <div class="main1">
+
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="title">
+                    <div>稀缺小户型，投资自住皆宜</div>
+                    <div>查看更多</div>
+                </div>
+                <div class="main2">
+
+                </div>
+            </div>
+
+            <div class="main" style="overflow: auto;">
+                <div class="title">
+                    <div>分析师精选低价笋盘</div>
+                    <div>查看更多</div>
+                </div>
+                <div class="main3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 100%;text-align: center;
+    font-size: 16px;color: rgba(140,140,140,1);
+    padding: 20px 0 40px;">已经到底了~</div>
+    <!-- 版权 -->
+    <div id="copyright">
+        <div class="copyright">
+            <div class="copyright_top">
+                <a href="">关于我们</a>
+                <a href="">隐私声明</a>
+            </div>
+            <p>广州奇思妙行房地产服务有限公司 © 2018 新房分析师 版权所有</p>
+            <a href="" style="color: #999;display: block;margin-top: 10px;"> 粤ICP备18090337号-1</a>
+        </div>
+    </div>
+    <!-- 回到顶部 -->
+    <div class="go_top">
+
+    </div>
+    <script src="./lib/js/jquery3.5.1.js"></script>
+    <script>
+        jQuery(($) => {
+            $bannerList = $('.bannerList');
+            $bannerIdx = $('.banner_idx');
+            $banner = $('.banner');
+            var idx = 0;
+            var timer;
+            $($bannerIdx.children()[idx]).css('background', '#58bc58')
+            $($bannerList.children()[idx]).css({
+                'z-index': 1,
+                'opacity': 1
+            });
+
+            // 轮播图代码
+            lbt();
+            $banner.on('mousemove', () => {
+                
+                clearInterval(timer);
+            }).on('mouseout', () => {
+                lbt();
+            })
+
+            // 显示轮播图
+            function imgshow() {
+                for (let i = 0; i < 5; i++) {
+                    if (idx === i) {
+                        $($bannerList.children()[i]).animate({
+                            'opacity': 1
+                        }).css('z-index', 1);
+                        $($bannerIdx.children()[i]).css('background', '#58bc58')
+                    } else {
+                        $($bannerList.children()[i]).animate({
+                            'opacity': 0
+                        }).css('z-index', 0);
+                        $($bannerIdx.children()[i]).css('background', '#ccc')
+                    }
+                }
+            }
+
+            // 定时器
+            function lbt() {
+                timer = setInterval(() => {
+                    if (idx === 5) {
+                        idx = 0;
+                    }
+                    imgshow();
+                    idx++;
+                }, 2000)
+            }
+            // 轮播图代码结束
+
+            // 左右箭头按钮调整轮播图
+            var $arrow_left = $('.arrow_left');
+            var $arrow_right = $('.arrow_right');
+            $arrow_left.on('click', (e) => {
+                e.preventDefault();
+                idx--;
+                if (idx === -1) {
+                    idx = 4
+                }
+                imgshow();
+            });
+            $arrow_right.on('click', (e) => {
+                e.preventDefault();
+                idx++;
+                if (idx === 5) {
+                    idx = 0
+                }
+                imgshow();
+            })
+            // 结束! 左右箭头按钮调整轮播图
+
+            // 点击轮播图内圆圈显示对应下标图片
+            $bannerIdx.on('click', (e) => {
+                e.preventDefault();
+                if (e.target.tagName === 'SPAN') {
+                    idx = e.target.dataset.id - 1;
+                    imgshow();
+                }
+            })
+            // 结束! 点击轮播图内圆圈显示对应下标图片
+
+            // 房子列表
+            var $main1 = $('.main1');
+            var $main2 = $('.main2');
+            var $main3 = $('.main3');
+            $.get('http://localhost:1013/api/index.php', (data) => {
+                let _data = JSON.parse(data);
+                let main1_house = [];
+                let main2_house = [];
+                let main3_house = [];
+                for (let i = 0; i < 6; i++) {
+                    main1_house.push(_data.data[i]);
+                }
+                for (let i = 6; i < 12; i++) {
+                    main2_house.push(_data.data[i]);
+                }
+                for (let i = 12; i < 18; i++) {
+                    main3_house.push(_data.data[i]);
+                }
+                $main1.html(main1_house.map((item) => {
+                    return `<div class="house"><div class="house_img"><img src="${item.imgurl}"></div><div class="house_txt"><span>在售</span><span>${item.name}</span><span>${item.address}</span></div><div class="price"><p><span>均价:</span><span>${item.price}元/m²</span></p><p><span>精装</span><span>高层</span></p></div><a href="#" class="dijia">查低价</a></div>`
+                }))
+                $main2.html(main1_house.map((item) => {
+                    return `<div class="house"><div class="house_img"><img src="${item.imgurl}"></div><div class="house_txt"><span>在售</span><span>${item.name}</span><span>${item.address}</span></div><div class="price"><p><span>均价:</span><span>${item.price}元/m²</span></p><p><span>精装</span><span>高层</span></p></div><a href="#" class="dijia">查低价</a></div>`
+                }))
+                $main3.html(main1_house.map((item) => {
+                    return `<div class="house"><div class="house_img"><img src="${item.imgurl}"></div><div class="house_txt"><span>在售</span><span>${item.name}</span><span>${item.address}</span></div><div class="price"><p><span>均价:</span><span>${item.price}元/m²</span></p><p><span>精装</span><span>高层</span></p></div><a href="#" class="dijia">查低价</a></div>`
+                }))
+
+            })
+            // 房子列表结束
+            var top = document.querySelector('.go_top')
+            $(window).scroll(function () {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+                if (scrollTop >= 320) {
+                    top.style.height = '50px';
+
+                } else if (scrollTop < 320) {
+                    top.style.height = '0px';
+                }
+            })
+
+            // 点击回到顶部
+            $('.go_top').on('click', () => {
+                let GoTop;
+                let top = document.documentElement.scrollTop
+                GoTop = setInterval(() => {
+                    top -= (top * 0.25);
+                    document.documentElement.scrollTop = top
+                    if (top <= 1) {
+                        top = 0;
+                        clearInterval(GoTop);
+                        document.documentElement.scrollTop = 0
+                    }
+                }, 50)
+            })
+            // 点击回到顶部结束
+
+        })
+    </script>
 </body>
 
 </html>
