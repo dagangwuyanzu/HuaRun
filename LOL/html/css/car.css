@@ -1,0 +1,261 @@
+.car {
+    width: 100%;
+    height: 80px;
+    background-color: #ccc;
+    text-align: center;
+}
+
+.car a {
+    line-height: 80px;
+    font-size: 26px;
+}
+
+.car a span:nth-of-type(1) {
+    color: #000;
+}
+
+.car a span:nth-of-type(2) {
+    color: red;
+}
+
+.res {
+    padding-left: 60px;
+}
+
+.res dl {
+    margin: 0 16px 19px 16px;
+    float: left;
+    width: 202px;
+    height: 415px;
+    display: block;
+    color: #606060;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+.res dl dt {
+    float: left;
+    width: 202px;
+    height: 235px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.aname {
+    color: #2e2e2e;
+    width: 200px;
+    height: 24px;
+    line-height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    display: block;
+    font-weight: 900;
+    text-align: center;
+}
+
+.Qprice {
+    line-height: 17px;
+    /* text-align: center; */
+}
+
+.Qprice span:nth-of-type(1) {
+    display: inline-block;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 12px;
+    width: 79px;
+}
+
+.Qprice span:nth-of-type(2) {
+    color: red;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.Qprice span:nth-of-type(3) {
+    color: red;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.Wprice {
+    line-height: 17px;
+    /* text-align: center; */
+}
+
+.Wprice span:nth-of-type(1) {
+    display: inline-block;
+    width: 79px;
+    text-align: right;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.Wprice span:nth-of-type(2) {
+    color: red;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.btn {
+    /* display: inline-block; */
+    display: block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff3d0;
+    margin-left: 50px;
+    margin-top: 8px;
+    background-color: #58bc58;
+}
+
+.mai {
+    width: 550px;
+    height: 180px;
+    border: 15px solid #fff3d0;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -110px;
+    margin-left: -275px;
+    display: none;
+}
+
+.title {
+    text-align: right;
+}
+
+.title a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 24px;
+}
+
+.box {
+    width: 130px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.left {
+    float: left;
+    margin-left: 65px;
+    text-align: center;
+}
+
+.left p {
+    margin-top: 8px;
+    font-weight: 900;
+}
+
+.right {
+    float: left;
+    margin-left: 65px;
+}
+
+.right div:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.right div:nth-child(1) span:nth-of-type(1) {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.right div:nth-child(1) span:nth-of-type(2) {
+    font-size: 24px;
+    color: red;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.right div:nth-child(1) span:nth-of-type(3) {
+    font-size: 14px;
+    color: red;
+    font-weight: 900;
+}
+
+.right div:nth-child(2) span:nth-of-type(1) {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.right div:nth-child(2) span:nth-of-type(2) {
+    font-size: 24px;
+    color: red;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.right a {
+    display: block;
+    background: #ff5900;
+    width: 150px;
+    margin-top: 20px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.right img {
+    position: absolute;
+    width: 100px;
+    top: 36px;
+    right: 11px;
+}
+ .span{
+     display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 79px;
+    text-align: right;
+    font-size: 12px;
+}
+.heroQty{
+    display: inline-block;
+    margin-left: 5px;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: rgb(230, 136, 14);
+    border: 1px solid;
+}
+
+.Del{
+    display: block;
+    height: 30px;
+    background-color: red;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    width: 100px;
+    color: #fff;
+    margin-left: 49px;
+    margin-top: 5px;
+}
+dl:hover{
+    background: #ccc;
+    border: 2px solid #58bc58;
+}
+.Qty_input{
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: none;
+    text-align: center;
+    border: 1px solid;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        body {
+            background-color: #cccccc;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -230px;
+            margin-left: -200px;
+            border: 15px solid #fffe30;
+            background-color: #fff;
+            padding-top: 15px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: inline-block;
+            width: 60px;
+            text-align: right;
+            margin-left: 70px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-left: 130px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-left: 80px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .tishi{
+            margin-left: 40px;
+            display: none;
+        }
+        .tishi a{
+            display: inline-block;
+            font-size: 20px;
+            color: #58bc58;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>登录</h1>
+    <div class="box">
+        <div class="title"></div>
+        <label for="">账户：</label>
+        <input type="text" id="zh"> <br>
+        <label for="">密码：</label>
+        <input type="text" id="mm"><br>
+        <button class="btn">登录</button>
+        <p><span>还没有账户？</span><span><a href="reg.html">立即注册</a></span></p>
+        <div class="tishi">恭喜您登录成功，您可以<a href="jQ_shopping.html">前去</a> 买皮肤啦！</div>
+    </div>
+    <script src="./utils/request4.js"></script>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script>
+        jQuery(($) => {
+            $('.btn').on('click', () => {
+                zh = $('#zh').val();
+                mm = $('#mm').val();
+                let res = request.get('/login.php', {
+                    username: zh,
+                    password: mm
+                })
+                res.then(function (data) {
+                    if (data === 'wu') {
+                        alert('该用户名不存在')
+                    } else {
+                        if (data[0].password === mm) {
+                            $('.tishi').show(500);
+                        } else {
+                            alert('密码错误');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

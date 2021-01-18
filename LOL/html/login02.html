@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css1/bootstrap.css">
+    <style>
+        .box {
+            width: 600px;
+            height: 450px;
+            border: 2px solid #cccccc;
+            position: absolute;
+            left: 50%;
+            margin-left: -300px;
+            top: 100px;
+        }
+
+        .login_box {
+            width: 450px;
+            height: 250px;
+            padding-top: 40px;
+            position: absolute;
+            text-align: center;
+            top: 130px;
+            left: 75px;
+            /* border: 1px solid #000000; */
+        }
+
+        .reg_box {
+            width: 450px;
+            height: 250px;
+            padding-top: 40px;
+            position: absolute;
+            text-align: center;
+            top: 50px;
+            left: 75px;
+            /* border: 1px solid #000000; */
+        }
+
+        .reg_box div:nth-of-type(3) {
+            margin-left: -224px;
+        }
+
+        .reg_box div:nth-of-type(5) {
+            margin-left: -65px;
+            margin-top: 15px;
+        }
+
+        .title {
+            width: 600px;
+            height: 70px;
+            border-bottom: 2px solid #cccccc;
+            display: flex;
+        }
+
+        .title div:nth-child(1) {
+            border-right: 2px solid #cccccc;
+        }
+
+        .title div {
+            width: 299px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 20px;
+        }
+
+        .login_box .input {
+            display: inline-block;
+            width: 300px;
+        }
+
+        .reg_box .input {
+            display: inline-block;
+            width: 300px;
+        }
+
+        .login_btn {
+            transition: all .5s;
+        }
+
+        .reg_btn {
+            transition: all .5s;
+        }
+
+        .login_btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 3px #888888;
+        }
+
+        .active {
+            background: #c912aa;
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 3px #888888;
+        }
+
+        .active1 {
+            background: orange;
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 3px #888888;
+        }
+
+        .reg_btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 3px #888888;
+        }
+
+        .reg_box {
+            display: none;
+        }
+
+        .txt {
+            width: 600px;
+            height: 380px;
+        }
+
+        .reg_color {
+            background-color: orange;
+        }
+
+        .login_color {
+            background-color: orchid;
+        }
+
+        .p1 {
+            color: red;
+            margin-left: -98px;
+            display: none;
+        }
+
+        .p2 {
+            color: red;
+            margin-left: -83px;
+            display: none;
+        }
+
+        .tips1 {
+            color: red;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            display: none;
+        }
+
+        .tips2 {
+            color: red;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            display: none;
+        }
+
+        .tips3 {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .tips3 a {
+            display: inline-block;
+            font-size: 20px;
+            color: seagreen;
+            font-weight: 900;
+            margin: 0 5px;
+        }
+
+        .p3 {
+            font-size: 12px;
+        }
+
+        .p4,
+        .p5,
+        .p6,
+        .p7,
+        .p8 {
+            display: none;
+            color: red;
+            /* line-height: 0;
+            margin-top: 15px;
+            margin-bottom: 0; */
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .gou1,
+        .gou2,
+        .gou3,
+        .gou4,
+        .gou5 {
+            display: none;
+            float: right;
+        }
+
+        .tishi2 {
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <div class="login_btn active">登录</div>
+            <div class="reg_btn">注册</div>
+        </div>
+        <div class="txt login_color ">
+            <div class="cont login_box">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">账户：</label>
+                        <input type="email" class="form-control input login_zh" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <p class="tips1">该用户名不存在</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码：</label>
+                        <input type="password" class="form-control  input login_mm" id="exampleInputPassword1">
+                        <p class="tips2">密码错误</p>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input clause" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">本人承诺段位超过青铜</label>
+                    </div>
+                    <button disabled class="btn btn-primary loginBtn">登录</button>
+                </form>
+                <div class="tips3"><span>恭喜您登录成功可以<a href="jQ_shopping.html">前去</a>购买英雄啦！</span></div>
+            </div>
+            <div class="cont reg_box">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">账户：</label>
+                        <input type="email" class="form-control input reg_zh" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <span class="gou1">√</span>
+                    </div>
+                    <p class="p1">您输入的账户已存在!</p>
+                    <p class="p2">请输入正确的账户格式!</p>
+                    <p class="p3">用户名请以大小写字母开头，并长度控制在 6~20</p>
+                    <p class="p4">请先输入账户</p>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">密码：</label>
+                        <input type="password" class="form-control  input reg_mm" id="exampleInputPassword1">
+                        <span class="gou2">√</span>
+                        <p class="p5">请设置您的密码</p>
+                    </div>
+                    <div class="xb_btn">
+                        <span>性别：</span>
+                        <input type="radio" id="nan" name="xb">
+                        <label for="nan">男</label>
+                        <input type="radio" id="nv" name="xb">
+                        <label for="nv">女</label>
+                        <span class="gou3">√</span>
+                        <p class="p6">请选择您的性别</p>
+                    </div>
+                    <div>
+                        <label for="">年龄：</label>
+                        <input type="number" id="nl" class="form-control  input">
+                        <span class="gou4">√</span>
+                        <p class="p7">请填写您的年龄</p>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input clause2" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">本人承诺段位超过青铜</label>
+                        <span class="gou5">√</span>
+                        <p class="p8">请阅读并勾选条款</p>
+                    </div>
+                    <button class="btn btn-primary regBtn">注册</button>
+                </form>
+                <div class="tishi2"><span>恭喜您注册成功，赶快去<a href="">登录</a>吧</span></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script>
+        jQuery(($) => {
+            $title = $('.title');
+            $login_btn = $('.login_btn');
+            $reg_btn = $('.reg_btn');
+            $login_box = $('.login_box');
+            $reg_box = $('.reg_box');
+            $txt = $('.txt');
+            $title.on('click', 'div', function (e) {
+                if (this.classList.contains('reg_btn')) {
+                    $reg_btn.addClass('active1');
+                    $login_btn.removeClass('active');
+                    $reg_box.show();
+                    $login_box.hide();
+                    $txt.addClass('reg_color');
+                    $txt.removeClass('login_color');
+                } else if (this.classList.contains('login_btn')) {
+                    $login_btn.addClass('active');
+                    $reg_btn.removeClass('active1');
+                    $reg_box.hide();
+                    $login_box.show();
+                    $txt.removeClass('reg_color');
+                    $txt.addClass('login_color');
+                }
+            });
+            // 同意条款按钮生效
+            $('.clause').on('click', function () {
+                if (this.checked == true) {
+                    $('.btn').attr('disabled', false);
+                } else {
+                    $('.btn').attr('disabled', true);
+                }
+            });
+            // 点击登录
+            $('.loginBtn').on('click', (e) => {
+                console.log(66);
+                let _data = {
+                    username: $('.login_zh').val(),
+                    password: $('.login_mm').val()
+                };
+                e.preventDefault();
+                $.get('http://localhost:1012/api/login.php', _data, (data) => {
+                    let data1 = JSON.parse(data);
+                    if (data1 === 'wu') {
+                        $('.tips1').show(500);
+                    } else {
+                        if (data1[0].password === $('.login_mm').val()) {
+                            $('.tips3').show(200)
+                        } else {
+                            $('.tips2').show(500)
+                        }
+                    }
+                })
+            });
+            $('.login_zh').focus(() => {
+                $('.tips1').hide(300);
+            });
+            $('.login_mm').focus(() => {
+                $('.tips2').hide(300)
+            })
+
+            let $p1 = $('.p1');
+            let $p2 = $('.p2');
+            let $p3 = $('.p3');
+            let $p4 = $('.p4');
+            // 输入款内容改变时判断账户名是否存在
+            $('.reg_zh').on('blur', function () {
+                let $reg_zh = $('.reg_zh').val();
+                let _data = {
+                    username: $reg_zh
+                };
+                // 看是否符合格式
+                if (!/^[a-zA-Z][\w\-]{5,19}$/.test($reg_zh)) {
+                    $p2.show(200);
+                    $p1.hide(200);
+                    $('.gou1').hide(200);
+                } else {
+                    // 符合格式发起请求看账户是否存在
+                    $.get('http://localhost:1012/api/check_username.php', _data, (data) => {
+                        if (data === 'no') {
+                            $p1.show(300);
+                            $('.gou1').hide(200);
+                        } else {
+                            $('.gou1').show(200);
+                        }
+                    })
+                }
+
+            });
+            // 密码框有内容时打勾
+            $('.reg_mm').on('blur', function () {
+
+                if ($('.reg_mm').val() != '') {
+                    if ($('.gou1').css('display') === 'none') {
+                        $('.p4').show(200);
+                    } else {
+                        $('.gou2').show(200);
+                    }
+                } else {
+                    $('.gou2').hide(200);
+                }
+            });
+            $('.reg_mm').focus(() => {
+                $('.p5').hide(200);
+            })
+            $('.reg_zh').focus(() => {
+                $p1.hide(200);
+                $p2.hide(200);
+                $p4.hide(200);
+            });
+
+            // 判断是否选择性别
+            $nan = $('#nan');
+            $nv = $('#nv');
+            $nan.on('click', () => {
+                $nan.addClass('xb');
+                $nv.removeClass('xb');
+            });
+            $nv.on('click', () => {
+                $nv.addClass('xb');
+                $nan.removeClass('xb');
+            });
+            $('.xb_btn').on('click', function (e) {
+                if (e.target.name === 'xb') {
+                    $('.gou3').show(200);
+                    $('.p6').hide(200);
+                }
+            })
+            // 年龄
+            $('#nl').on('blur', function () {
+                if ($('#nl').val() != '') {
+                    $('.gou4').show(200);
+                } else {
+                    $('.gou4').hide(200);
+                }
+            });
+            $('#nl').focus(() => {
+                $('.p7').hide(200);
+            })
+            // 条款
+            $('.clause2').on('click', function () {
+                $('.p8').hide()
+                if (this.checked === true) {
+                    $('.gou5').show();
+                } else {
+                    $('.gou5').hide();
+                }
+            })
+            // 点击注册
+            $('.regBtn').on('click', (e) => {
+                let Gender;
+                let _data;
+                e.preventDefault();
+                if ($('.reg_zh').val() === '') {
+                    $('.p4').show(200);
+                } else if ($('.reg_mm').val() === '') {
+                    $('.p5').show(200);
+                } else if (!$('#nan').hasClass('xb') && !$('#nv').hasClass('xb')) {
+                    $('.p6').show(200);
+                } else if ($('#nl').val() === '') {
+                    $('.p7').show(200);
+                } else if ($('.clause2')[0].checked === false) {
+                    $('.p8').show(200);
+                } else {
+                    if ($('#nan').hasClass('xb')) {
+                        Gender = '男';
+                    } else if ($('#nv').hasClass('xb')) {
+                        Gender = '女';
+                    }
+                    _data = {
+                        username: $('.reg_zh').val(),
+                        password: $('.reg_mm').val(),
+                        age: $('#nl').val(),
+                        Gender: Gender
+                    };
+                    // 发起请求
+                    $.post('http://localhost:1012/api/reg.php', _data, (data) => {
+                        if (data === 'success') {
+                            $('.tishi2').show(500);
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

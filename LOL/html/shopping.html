@@ -1,0 +1,195 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/shopping.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <title>商城</title>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="ul1">
+            <li>
+                <a href="LOL_index.html">
+                    <img src="../html/img/LOL-nav.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>游戏资料</span>
+                    <span>GAME INFO</span>
+                </a>
+            </li>
+            <li>
+                <a href="shopping.html">
+                    <span>商城/合作</span>
+                    <span>STORE</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>社区活动</span>
+                    <span>COMMUNITY</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>赛事官网</span>
+                    <span>ESPORTS</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>自助系统</span>
+                    <span>SYSTEM</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="ul2">
+            <li>
+                <a href="#">
+                    <img src="../html/img/LOL-nav-sousuo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../html/img/LOL-nav-shouji.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <img src="../html/img/LOL-nav-wode.png" alt="">
+                    <span>亲爱的召唤师，欢迎<span class="dl">登录</span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="car">
+        <a href="car.html">
+            <span>购物车</span>
+            ( <span class="qty">0</span> )
+        </a>
+        <div class="fy">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>10</button>
+            <button>11</button>
+            <button>12</button>
+            <button>13</button>
+        </div>
+    </div>
+    <div id="res">
+
+    </div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script src="./utils/utils.js"></script>
+    <script>
+        let res = document.querySelector('#res');
+        let cartQty = document.querySelector('.qty');
+        let goodsData = {};
+        const fy = document.querySelector('fy');
+        // 调用函数  将数据库中的数据显示到页面
+        let _data = {};
+        request({
+            url: '/shopping.php',
+            data: _data,
+            success: function ({
+                data
+            }) {
+                goodsData = data;
+                res.innerHTML = data.map(item =>
+                    `<dl data-id="${item.id}"><dt><a href="#"><img src="${item.imgurl}"></a></dt><dd><a href="#" class="aname">${item.name}</a><div class="Qprice"><span>Q币价：</span><span>${item.Qprice}</span><span>Q币</span></div><div class="Wprice"><span>微信价：</span><span>￥${item.Wprice}</span></div><button style="margin:15px 17px; " class="btn btn1">加入购物车</button><button class="btn btn2">立即购买</button></dd></dl>`
+                ).join('')
+            }
+        });
+
+
+        // 实时更新购物车数量
+        let cartlist = localStorage.getItem('cartlist');
+        try {
+            cartlist = JSON.parse(cartlist) || [];
+        } catch (err) {
+            cartlist = [];
+        }
+        console.log('cartlist', cartlist);
+        cartQty.innerText = cartlist.length;
+
+
+        // 点击
+        res.onclick = function (e) {
+            // 点击跳转
+            if (e.target.tagName.toLowerCase() === 'img' || e.target.classList.contains('aname')) {
+                e.preventDefault();
+                const id = e.target.parentElement.parentElement.parentElement.dataset.id || e.target.parentElement
+                    .parentElement.dataset.id;
+
+                location.href = 'hero.html?id=' + id;
+            };
+            // 点击加入购物车
+            if (e.target.classList.contains('btn1')) {
+                let _goodsData = goodsData.find(item => item.id === e.target.parentElement.parentElement.dataset
+                    .id);
+                console.log('_goodsData=', _goodsData);
+                let currentGoods = cartlist.find(item => item.id === _goodsData.id);
+                if (currentGoods) {
+                    currentGoods.qty++;
+                } else {
+                    _goodsData.qty = 1;
+                    cartlist.unshift(_goodsData);
+                }
+                cartQty.innerText = cartlist.length;
+                localStorage.setItem('cartlist', JSON.stringify(cartlist));
+
+                // 点击跳转立即购买
+            } else if (e.target.classList.contains('btn2')) {
+                let _goodsData = goodsData.find(item => item.id === e.target.parentElement.parentElement.dataset
+                    .id);
+                let currentGoods = cartlist.find(item => item.id === _goodsData.id);
+                if (currentGoods) {
+                    currentGoods.qty++;
+                } else {
+                    _goodsData.qty = 1;
+                    cartlist.unshift(_goodsData);
+                }
+                // 实时更新购物车数量
+                cartQty.innerText = cartlist.length;
+                localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                location.href = 'car.html'
+            }
+        };
+
+
+        // 分页
+        jQuery(($) => {
+            $('.fy').on('click', function (e) {
+                if (e.target.tagName.toLowerCase() === 'button') {
+                    _data.page = e.target.innerText;
+                    request({
+                        url: '/shopping.php',
+                        data: _data,
+                        success: function ({
+                            data
+                        }) {
+                            goodsData = data;
+                            res.innerHTML = data.map(item =>
+                                `<dl data-id="${item.id}"><dt><a href="#"><img src="${item.imgurl}"></a></dt><dd><a href="#" class="aname">${item.name}</a><div class="Qprice"><span>Q币价：</span><span>${item.Qprice}</span><span>Q币</span></div><div class="Wprice"><span>微信价：</span><span>￥${item.Wprice}</span></div><button style="margin:15px 17px; " class="btn btn1">加入购物车</button><button class="btn btn2">立即购买</button></dd></dl>`
+                            ).join('')
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+</body>
+
+</html> -->

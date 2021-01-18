@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/car.css">
+    <title>Document</title>
+    <style>
+        dl input {
+            background-color: coral;
+            margin-top: 13px;
+            width: 60px;
+            height: 25px;
+            margin-left: 141px;
+        }
+
+        .car {
+            position: relative;
+        }
+
+        .sum {
+            position: absolute;
+            right: 230px;
+            top: 21px;
+            font-size: 30px;
+        }
+
+        .sum span:nth-child(1) {
+            font-weight: 900;
+            color: rgb(223, 39, 14);
+        }
+
+        .sum_price {
+            color: rgb(19, 192, 34);
+            font-weight: 900;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="_nav"></div>
+    <div class="car">
+        <a href="jQ_cart.html">
+            <span>购物车</span>
+            ( <span class="qty">0</span> )
+        </a>
+        <div class="sum">
+            <span>总价：</span>
+            ( <span class="sum_price">100</span> )
+            <span>RMB</span>
+        </div>
+    </div>
+    <div class="res"></div>
+    <div class="mai">
+    </div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script>
+        var aas = document.getElementsByTagName('a');
+        // console.log(aas);
+        jQuery(($) => {
+            $('._nav').load('nav.html');
+            // 实时更新购物车数量
+            let cartlist = localStorage.getItem('cartlist');
+            try {
+                cartlist = JSON.parse(cartlist) || [];
+            } catch (err) {
+                cartlist = [];
+            };
+            // $('.qty').html(cartlist.length);
+            // init();
+            init().on('click', function (e) {
+                var dl_id = $(e.target).parents('dl').attr('data-id');
+                // 判断弹窗有无弹出
+                if ($('.mai').css('display') === 'block') {
+                    e.stopPropagation();
+                    e.preventDefault();
+                } else {
+                    // 跳转详情页
+                    if (e.target.tagName.toLowerCase() === 'img' || e.target.classList.contains(
+                            'aname')) {
+                        e.preventDefault();
+                        // const id = $(e.target).parents('dl').attr('data-id')
+                        location.href = 'jQ_hero.html?id=' + dl_id;
+                        // 购买 弹窗弹出
+                    } else if (e.target.classList.contains('btn')) {
+                        // 显示弹窗，并显示商品
+                        $('.mai').show(1000).html(cartlist.filter(item =>
+                            item.id === dl_id
+                        ).map(_item =>
+                            `<div class="title"><a href="#" class="cha">x</a></div><div class="left"><div class="box"><img src="${_item.imgurl}"></div><p>${_item.name}</p></div><div class='right'><div><span>Q币价：</span><span>${_item.Qprice}</span><span>Q币</span></div><div><span>微信价：</span><span>￥${_item.Wprice}</span><a  href="#" class="qd">确定</a></div>  <img style="width: 100px;" src="img/微信收款码.jpg" alt="">`
+                        ).join('')).on('click', function (e) {
+                            if (e.target.classList.contains('cha') || e.target.classList
+                                .contains('qd')) {
+                                $('.mai').hide(1000);
+                                $('body').css({
+                                    backgroundColor: '#fff'
+                                })
+                            }
+                        })
+                        $('body').css({
+                            backgroundColor: '#ccc'
+                        })
+                    } else if (e.target.classList.contains('Del')) {
+                        // 将删除的商品数据从数组中去掉
+                        cartlist = cartlist.filter(item => item.id != dl_id);
+                        // 并将新数组重新缓存到本地
+                        localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                        init();
+                        // 点击英雄数量弹出输入款手动编辑
+                    } else if (e.target.classList.contains('heroQty')) {
+                        let $this = $(e.target);
+                        let $input = $this.next();
+                        $input.show().focus().val($this.text()).blur(function () {
+                            // 失去焦点时改变英雄的qty
+                            $input.hide();
+                            $this.text($input.val()).show();
+                            cartlist.map(item => {
+                                if (item.id === dl_id) {
+                                    item.qty = $input.val();
+                                }
+                            });
+                            // 并将新数据重新写入本地缓存
+                            localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                            // 重新渲染页面
+                            init();
+                        });
+                        $this.hide();
+                    }
+                }
+            })
+
+            document.onkeyup=function(e){
+                if(e.keyCode===13){
+                    if($('.Qty_input').focus()){
+                        $('.Qty_input').blur();
+                    }
+                }
+            }
+            function init() {
+                let sumprice = 0;
+                $('.qty').html(cartlist.length);
+                $('.res').html(cartlist.map(item => {
+                    sumprice += item.Wprice * item.qty;
+                    return `<dl data-id="${item.id}"><dt><a href="#"><img src="${item.imgurl}"></a></dt><dd><a href="#" class="aname">${item.name}</a><div class="Qprice"><span>Q币价：</span><span>${item.Qprice}</span><span>Q币</span></div><div class="Wprice"><span>微信价：</span><span>￥${item.Wprice}</span></div><div><span class="span">数量：</span><span class="heroQty">${item.qty}</span><input/ class="Qty_input" type="number"></div><a href="#" class="btn">立即购买</a><a href="#" class="Del">删除</a></dd></dl>`
+                }).join(''))
+                $('.sum_price').html(sumprice.toFixed(2));
+                return $('.res')
+            }
+        });
+    </script>
+</body>
+
+</html>

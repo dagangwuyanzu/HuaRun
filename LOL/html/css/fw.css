@@ -1,0 +1,199 @@
+.html {
+    width: 1240px;
+    height: 700px;
+    margin: auto;
+    background-color: #000000;
+    padding-top: 50px;
+}
+
+.box {
+    width: 1057px;
+    height: 645px;
+    margin: auto;
+    /* background-color: #000000; */
+    background-color: #010a13;
+    border: 1px solid gold;
+    display: flex;
+    position: relative;
+}
+
+.body {
+    width: 1057px;
+    height: 645px;
+    margin: auto;
+    /* background-color: #000000; */
+    background-color: #010a13;
+    border: 1px solid gold;
+    display: flex;
+    position: absolute;
+    top: 0;
+    /* display: none; */
+}
+
+
+
+.body>div {
+    width: 20%;
+    height: 100%;
+}
+
+.body .div1 {
+    background: url(../img/fwbgcolor.png);
+}
+
+.body .div2 {
+    background: url(../img/zhuzaibgcolor.png);
+}
+
+.body .div3 {
+    background: url(../img/wushubgcolor.png);
+}
+
+.body .div4 {
+    background: url(../img/jianjue_bgcolor.png);
+}
+
+.body .div5 {
+    background: url(../img/qidi_bgcolor.png);
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5 {
+    opacity: 1;
+    transition: all 1.2s;
+}
+
+.body>div>img {
+    position: absolute;
+    top: 0;
+}
+
+/* .body>div>img:nth-of-type(2) {
+    opacity: .5;
+} */
+
+.img {
+    opacity: 1;
+}
+
+.div_opacity {
+    opacity: .4;
+    ;
+}
+
+
+.body>div>div:nth-of-type(1) {
+    position: relative;
+    width: 100%;
+    height: 246px;
+    margin-top: 40px;
+    margin-bottom: 46px;
+    cursor: pointer;
+}
+
+.body>div>div:nth-of-type(1) img {
+    position: absolute;
+}
+
+.body>div>div:nth-of-type(1)>div:nth-of-type(1) {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 199px;
+    left: 0;
+    color: #ffffff;
+}
+
+.body>div>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(1) {
+    color: #727271;
+    font-family: "BeaufortforLOL-Medium", sans-serif;
+    font-size: 16px;
+    -webkit-letter-spacing: 0.15em;
+    -moz-letter-spacing: 0.15em;
+    -ms-letter-spacing: 0.15em;
+    letter-spacing: 0.15em;
+    line-height: 19.2px;
+    margin-bottom: 4px;
+}
+
+.body>div>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(2) {
+    color: #ddd;
+    font-size: 10px;
+    -webkit-letter-spacing: 0.075em;
+    -moz-letter-spacing: 0.075em;
+    -ms-letter-spacing: 0.075em;
+    letter-spacing: 0.075em;
+    line-height: 14px;
+    opacity: 0.2;
+    -webkit-transition: opacity 0.15s ease-out;
+    transition: opacity 0.15s ease-out;
+}
+
+.body>div>div img:nth-of-type(3) {
+    display: none;
+}
+
+.erjifw {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    height: 170px;
+}
+
+.erjifw>div {
+    flex: auto 0 0;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.erjifw>div>div img {
+    border-radius: 32px;
+    width: 62px;
+    height: 62px;
+    cursor: pointer;
+}
+
+
+.body>div>div:nth-of-type(3) {
+    margin: 46px 0 0;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    color: #ddd;
+    opacity: .3;
+}
+/* 第一页结束 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 点击跳转第二页 */
+
+
+.body2 {
+    display: none;
+    width: 1057px;
+    height: 645px;
+    margin: auto;
+    /* background-color: #000000; */
+    background-color: #010a13;
+    border: 1px solid gold;
+    /* display: flex; */
+    position: absolute;
+    top: 0;
+}

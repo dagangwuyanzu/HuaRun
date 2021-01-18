@@ -1,0 +1,116 @@
+#nav {
+    width: 100%;
+    height: 355px;
+    background-image: url(../img/LOL-logo.png);
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.nav {
+    width: 100%;
+    height: 76px;
+    background-color: #161617;
+    /* opacity: .8; */
+}
+
+.nav .ul1 {
+    padding-top: 15px;
+    margin-left: 55px;
+}
+
+.nav .ul1 li {
+    float: left;
+    padding: 0 48px;
+    text-align: center;
+}
+
+.nav .ul1 a {
+    color: #ffffff;
+}
+
+.nav .ul1 li:nth-of-type(1) {
+    padding: 0 12px 0 0;
+}
+
+.nav .ul1 li span {
+    display: block;
+}
+
+.nav .ul1 li span:nth-of-type(1) {
+    font-size: 18px;
+}
+
+.nav .ul1 li span:nth-of-type(2) {
+    font-size: 12px;
+}
+
+.nav .ul2 {
+    display: flex;
+    align-items: center;
+}
+
+.nav .ul2 li {
+    float: left;
+    padding: 0 18px;
+}
+
+/* .nav .ul2 li:nth-of-type(1) img {
+    width: 24px;
+    height: 24px;
+} */
+
+.nav .ul2 li:nth-of-type(2) img {
+    width: 20px;
+}
+
+.nav .ul2 li:nth-of-type(3) img {
+    width: 44px;
+    margin-right: 5px;
+}
+
+.nav .ul2 li:nth-of-type(3) a {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.nav .ul2 li:nth-of-type(3) .dl {
+    color: #fff3d0;
+}
+
+.nav_move {
+    width: 100%;
+    /* height: 287px; */
+    background-color: #181819;
+    opacity: .8;
+    color: #ffffff;
+    font-size: 14px;
+    /* padding-top: 15px; */
+    box-sizing: border-box;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.nav_move ul {
+    float: left;
+    text-align: center;
+    padding: 0 42px;
+}
+
+.nav_move ul:nth-of-type(1) {
+    margin-left: 245px;
+}
+
+.nav_move ul li {
+    padding: 5px 0;
+}
+
+.nav1:hover .nav_move {
+    padding-top: 15px;
+    height: 278px;
+}
+
+.nav_move li:hover {
+    color: coral;
+}

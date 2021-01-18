@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: #000000;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            animation-name: play;
+
+            /* 动画旋转一圈的时间 */
+            animation-duration: 2s;
+
+            /* 动画旋转的快慢保持一致 时间曲线 */
+            animation-timing-function: linear;
+
+            /* 动画的定时 定时3s后才开始动 */
+            /* animation-delay: 3s; */
+
+            /* 播放次数 */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes play {
+            20%{
+                opacity: .8;
+            }
+            40% {
+                opacity: .6;
+            }
+            60% {
+                opacity: .4;
+            }
+            80% {
+                opacity: .8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .p{
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p class="p">
+            廖佳
+        </p>
+    </div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script>
+        jQuery(($)=>{
+            $('.p').on('click',()=>{
+                alert('廖佳真好看');
+            })
+        })
+    </script>
+</body>
+
+</html>

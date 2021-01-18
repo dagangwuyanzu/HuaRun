@@ -1,0 +1,137 @@
+/*公共样式--开始*/
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+form,
+input,
+textarea,
+th,
+td,
+select {
+    margin: 0;
+    padding: 0;
+}
+
+.common {
+    width: 1004px;
+    margin: auto;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+i {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul,
+ol,
+li {
+    /* 清除列表符号 */
+    list-style: none;
+}
+
+img {
+    border: none;
+    /* vertical-align: middle; */
+}
+
+a {
+    /* 清除a下划线 */
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+input,
+textarea {
+    /* 去掉聚焦时蓝色边框 */
+    outline: none;
+    border: none;
+}
+
+textarea {
+    /* 禁止拉动 */
+    resize: none;
+    overflow: auto;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    /* 清除浮动 */
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.fl {
+    /* 左浮 */
+    float: left;
+}
+
+.fr {
+    /* 右浮 */
+    float: right;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tr {
+    text-align: right;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+html {
+    overflow-x: hidden;
+}
+

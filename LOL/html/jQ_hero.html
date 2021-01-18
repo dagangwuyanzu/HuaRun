@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <title>hero</title>
+</head>
+
+<body>
+    <div class="_nav"></div>
+    <div class="car">
+        <a href="jQ_cart.html">
+            <span>购物车</span>
+            ( <span class="qty">0</span> )
+        </a>
+    </div>
+
+    <div class="res"></div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script src="./utils/utils.js"></script>
+    <script>
+        jQuery(($) => {
+            $('._nav').load('nav.html');
+            // 实时更新购物车数量
+            var cartlist = localStorage.getItem('cartlist');
+            try {
+                cartlist = JSON.parse(cartlist) || [];
+            } catch (err) {
+                cartlist = [];
+            }
+            $('.qty').html(cartlist.length);
+            // 拿到传来的id
+            var params = location.search.slice(1).split('&');
+            let data = {};
+            params.forEach(item => {
+                let arr = item.split('=');
+                data[arr[0]] = arr[1];
+            });
+            let goodsData = {};
+            init();
+
+            // 点击
+            $('.res').on('click', (e) => {
+                // 加入购物车
+                if (e.target.classList.contains('btn1')) {
+                    let currentGoods = cartlist.find(item => item.id === goodsData.id);
+
+                    if (currentGoods) {
+                        currentGoods.qty++;
+                    } else {
+                        goodsData.qty = 1;
+                        cartlist.unshift(goodsData);
+                    }
+                    $('.qty').html(cartlist.length);
+                    localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                };
+                // 跳转立即购买
+                if (e.target.classList.contains('btn2')) {
+                    let currentGoods = cartlist.find(item => item.id === goodsData.id);
+                    if (currentGoods) {
+                        currentGoods.qty++;
+                    } else {
+                        goodsData.qty = 1;
+                        cartlist.unshift(goodsData);
+                    }
+                    // 实时更新购物车数量
+                    $('.qty').html(cartlist.length);
+                    localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                    location.href = 'jQ_cart.html';
+                }
+            })
+
+            function init() {
+                request({
+                    url: '/hero.php',
+                    data: {
+                        id: data.id
+                    },
+                    success: function ({
+                        data
+                    }) {
+                        goodsData = data;
+                        $('.res').html(
+                            `<dl data-id="${data.id}"><dt><a href="#"><img src="${data.imgurl}"></a></dt><dd><a href="#" class="aname">${data.name}</a><div class="Qprice"><span>Q币价：</span><span>${data.Qprice}</span><span>Q币</span></div><div class="Wprice"><span>微信价：</span><span>￥${data.Wprice}</span></div><button style="margin:15px 17px; " class="btn btn1">加入购物车</button><button class="btn btn2">立即购买</button></dd></dl>`
+                        )
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

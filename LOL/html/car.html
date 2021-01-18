@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/car.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="ul1">
+            <li>
+                <a href="LOL_index.html">
+                    <img src="../html/img/LOL-nav.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>游戏资料</span>
+                    <span>GAME INFO</span>
+                </a>
+            </li>
+            <li>
+                <a href="shopping.html">
+                    <span>商城/合作</span>
+                    <span>STORE</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>社区活动</span>
+                    <span>COMMUNITY</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>赛事官网</span>
+                    <span>ESPORTS</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>自助系统</span>
+                    <span>SYSTEM</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="ul2">
+            <li>
+                <a href="#">
+                    <img src="../html/img/LOL-nav-sousuo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../html/img/LOL-nav-shouji.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <img src="../html/img/LOL-nav-wode.png" alt="">
+                    <span>亲爱的召唤师，欢迎<span class="dl">登录</span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="car">
+        <a href="car.html">
+            <span>购物车</span>
+            ( <span class="qty">0</span> )
+        </a>
+    </div>
+    <div class="res"></div>
+    <div class="mai">
+    </div>
+    <script src="./lib/jquery3.5.1.js"></script>
+    <script>
+        var res = document.querySelector('.res');
+        var mai = document.querySelector('.mai');
+        jQuery($ => {
+            let cartlist = localStorage.getItem('cartlist');
+            try {
+                cartlist = JSON.parse(cartlist) || [];
+            } catch (err) {
+                cartlist = [];
+            }
+            $('.qty').html(cartlist.length);
+            console.log(cartlist);
+
+            $('.res').html(cartlist.map(item =>
+                `<dl data-id="${item.id}"><dt><a href="#"><img src="${item.imgurl}"></a></dt><dd><a href="#" class="aname">${item.name}</a><div class="Qprice"><span>Q币价：</span><span>${item.Qprice}</span><span>Q币</span></div><div class="Wprice"><span>微信价：</span><span>￥${item.Wprice}</span></div><a href="#" class="btn">立即购买</a></dd></dl>`
+            ).join('')).on('click', (e) => {
+                if (mai.style.display == 'block') {
+                    e.stopPropagation();
+                    e.preventDefault();
+                } else {
+                    if (e.target.tagName.toLowerCase() === 'img' || e.target.classList.contains(
+                            'aname')) {
+                        e.preventDefault();
+                        const id = e.target.parentElement.parentElement.parentElement.dataset.id || e
+                            .target
+                            .parentElement
+                            .parentElement.dataset.id;
+
+                        location.href = 'hero.html?id=' + id;
+                    } else if (e.target.classList.contains('btn')) {
+                        $('.mai').show().html(cartlist.filter(item =>
+                            item.id === e.target.parentElement.parentElement.dataset.id
+                        ).map(_item =>
+                            `<div class="title"><a href="#" class="cha">x</a></div><div class="left"><div class="box"><img src="${_item.imgurl}"></div><p>${_item.name}</p></div><div class='right'><div><span>Q币价：</span><span>${_item.Qprice}</span><span>Q币</span></div><div><span>微信价：</span><span>￥${_item.Wprice}</span><a  href="#" class="qd">确定</a></div>  <img style="width: 100px;" src="img/微信收款码.jpg" alt="">`
+                        ).join('')).on('click', function (e) {
+                            if (e.target.classList.contains('cha')||e.target.classList.contains('qd')) {
+                                $('.mai').hide();
+                                $('body').css({
+                                    backgroundColor: '#fff'
+                                })
+                            }
+                        })
+                        $('body').css({
+                            backgroundColor: '#ccc'
+                        })
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html> -->
